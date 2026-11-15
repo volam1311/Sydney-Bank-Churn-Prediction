@@ -251,7 +251,7 @@ $$
 with
 
 $$
-\eta = 0.286 - 1.007\, z_{\text{tenure}} - 0.311\, z_{\text{balance}} - 0.313\, z_{\text{transactions}} - 1.474\, \text{ActiveYes}
+\eta = 0.286 - 1.007 \cdot z_{\text{tenure}} - 0.311 \cdot z_{\text{balance}} - 0.313 \cdot z_{\text{transactions}} - 1.474 \cdot \text{ActiveYes}
 $$
 
 and
@@ -261,14 +261,14 @@ z_{\text{tenure}} = \frac{\text{TenureMonths} - 61.054}{34.101}
 $$
 
 $$
-z_{\text{balance}} = \frac{\text{Balance} - 46{,}186.114}{32{,}362.777}
+z_{\text{balance}} = \frac{\text{Balance} - 46186.114}{32362.777}
 $$
 
 $$
-z_{\text{transactions}} = \frac{\text{NumTransactions\_Last6Months} - 8.049}{2.840}
+z_{\text{transactions}} = \frac{\text{transactions} - 8.049}{2.840}
 $$
 
-The three means and standard deviations are the training-set values used by the scaler. A customer at the training average on every numeric field, who is inactive, has \(\eta = 0.286\) and a churn probability of about 0.57. Switching that same customer to active subtracts 1.474 from \(\eta\) and drops the probability to about 0.23. One training-standard-deviation longer tenure, about 34 months, subtracts 1.007 and drops it to about 0.33.
+`transactions` is `NumTransactions_Last6Months`. The three means and standard deviations are the training-set values used by the scaler. A customer at the training average on every numeric field, who is inactive, has $\eta = 0.286$ and a churn probability of about 0.57. Switching that same customer to active subtracts 1.474 from $\eta$ and drops the probability to about 0.23. One training-standard-deviation longer tenure, about 34 months, subtracts 1.007 and drops it to about 0.33.
 
 ### 7.6. Held-out test set
 
